@@ -12,12 +12,14 @@
 }
 
 :root {
-    --couleur1: rgb(248, 209, 102);
-    --couleur2: rgb(247, 212, 183);  
-    --couleur3: rgb(135, 58, 236); ;
+    --couleur1: hsl(39, 100%, 71%);
+    --couleur2: hsl(31, 66%, 93%);
+    --couleur3:  hsl(256, 67%, 59%);
 }
 
-*{
+
+*{  
+    box-sizing: border-box;
     font-family: "dmsans", sans-serif;
 }
 
@@ -27,7 +29,7 @@ html,body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     row-gap: 100px;
 }
 
@@ -35,7 +37,7 @@ img {
     width: 20%;
 }
 
-.globalGrid {
+.mainGrid {
     display: grid;
     grid-template-columns: 130px 390px;
     grid-template-rows: 500px;
@@ -149,7 +151,7 @@ img {
 .schedulePosts {
     grid-column: 3/4;
     grid-row: 1/3;
-    background-color:rgb(178, 200, 200);
+    background-color:hsl(254, 88%, 90%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -268,4 +270,140 @@ img {
 
 .aiContent img {
     width: 120%
+}
+
+@media (max-width: 375px) {
+    .mainGrid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .gridLeft {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+      
+    }
+
+    .gridRight{
+        grid-column: 1;
+        grid-row: 1;
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .socialMedia {
+        grid-column: 1;
+        grid-row: 1/2;
+        gap: 10px;
+        padding: 30px;
+    }
+
+    .socialMediaTop{
+        font-size: 2.5rem;
+    }
+
+    .socialMediaBottom {
+        font-size: 1rem;
+    }
+
+    .socialMedia img {
+        width: 70%;
+    }
+
+    .multiplePlatforms {
+        grid-column: 1;    
+        grid-row: 2/3;
+        font-size: 1.3rem;
+    }
+
+    .multiplePlatforms img {
+        transform: none;
+        width: 100%;
+    }
+
+    .consistentSchedule {
+    grid-column: 1;
+    grid-row: 3/4;
+    justify-content: space-between;
+    padding-right: 50px;
+    font-size: 1.4rem;
+    }
+
+    .consistentScheduleTop{
+        transform: none;
+    }
+    
+    .schedulePosts {
+    grid-column: 1;
+    grid-row: 4/5;
+    height: auto;
+    font-size: 1.4rem;
+    padding: 30px 15px;
+    }
+
+    .schedulePosts span {
+    font-size: 1rem;
+    text-align: center;
+    }
+    .schedulePosts img {
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+    .growFollowers {
+    grid-column: 1;
+    grid-row: 5/6;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 15px 30px;
+    }
+
+    .growFollowers img {
+        width: 80%;
+    }
+    .audienceGrowth {
+        grid-column: 1;
+        grid-row: 6/7;
+        align-items: flex-start;
+        padding-right: 30px;
+        gap: 10px;
+    }
+
+    .fasterAudience {
+        font-size: 0.8rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .audienceGrowth img {
+        width: 80%;
+    }
+
+    .createPost {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    .createPost img {
+        width: 60%;
+        align-self: flex-start;
+    }
+
+    .aiContent {
+        font-size: 1.5rem;
+        padding-right: 25px;
+    }
+    
+    .aiContent img {
+        width: 70%;
+        align-self: flex-start;
+    }
 }
